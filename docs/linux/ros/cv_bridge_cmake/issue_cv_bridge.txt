@@ -1,0 +1,5 @@
+https://github.com/ros-perception/vision_opencv/issues/345
+
+
+copy all .cmake files to this folder
+/opt/ros/melodic/share/cv_bridge/cmake/

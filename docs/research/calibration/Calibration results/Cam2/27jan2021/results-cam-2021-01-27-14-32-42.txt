@@ -1,0 +1,33 @@
+Calibration results 
+====================
+Camera-system parameters:
+	cam0 (/tiscamera_ros/fisheye_left/image_rect_raw):
+	 type: <class 'aslam_cv.libaslam_cv_python.DoubleSphereCameraGeometry'>
+	 distortion: [] +- []
+	 projection: [  -0.19449374    0.59482004  320.68691208  319.53241563  712.4831301
+  536.02680184] +- [ 0.002077    0.00059501  0.75645053  0.75537089  0.17173563  0.17849899]
+	 reprojection error: [-0.000026, 0.000005] +- [0.197612, 0.195976]
+
+	cam1 (/tiscamera_ros/fisheye_right/image_rect_raw):
+	 type: <class 'aslam_cv.libaslam_cv_python.DoubleSphereCameraGeometry'>
+	 distortion: [] +- []
+	 projection: [  -0.19435216    0.59556632  321.30891626  320.1881303   685.48128327
+  563.86608062] +- [ 0.00216718  0.00063223  0.81167571  0.80922837  0.16488312  0.17832145]
+	 reprojection error: [0.000030, 0.000002] +- [0.169738, 0.161597]
+
+	baseline T_1_0:
+	 q: [-0.00336564 -0.00041301 -0.00011166  0.99999424] +- [ 0.00029585  0.00033191  0.00006898]
+	 t: [-0.19912355 -0.00034623  0.00050082] +- [ 0.00019383  0.00017471  0.00038641]
+
+
+
+Target configuration
+====================
+
+  Type: aprilgrid
+  Tags: 
+    Rows: 5
+    Cols: 5
+    Size: 0.15 [m]
+    Spacing 0.0450015 [m]
+    Low-id 25
