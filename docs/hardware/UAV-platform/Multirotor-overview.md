@@ -266,7 +266,7 @@ When UART port ```THS0``` is used to connect to pixhawk, warnings keep showing u
 
 ## Vicon
 
-Check out [website](http://172.18.72.192/tech-details/docs/systems/vicon) to setup vicon.
+Check out [website](https://tlab-uav.github.io/tech-details/docs/systems/vicon/) to setup vicon.
 
 ---
 
