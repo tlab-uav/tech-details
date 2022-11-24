@@ -105,6 +105,10 @@ module.exports = {
                   label: 'Past Platforms : pixhawk v1',
                   to: 'docs/systems/pixhawk_v1/pixhawk'
                 },
+                {
+                  label: 'SAFMC Drone Buildup',
+                  to: 'docs/systems/SAFMC'
+                },
               ]
             },
     
