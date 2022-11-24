@@ -144,7 +144,7 @@ To set up SSH, there is a need to do the following:
   2.1Not sure if this step is necessary but might need to enable password authentication by changing config file of the ssh. Go into ssh config file by the command `nano \url{/etc/ssh/sshd_config}` and change password authentication to yes and challengeresponseauthetication to no. Then restart your ssh with `sudo systemctl reload sshd`
 3. Check the ip address assigned to your obc by doing ifconfig.
 4. Make sure that you ground laptop can ssh as well.
-5. Then do the following command ssh rock@{localhost} where localhost is the ipaddress of the OBC. This will prompt you for the password, which is rock.
+5. Then do the following command `ssh rock@{localhost}` where `localhost` is the ipaddress of the OBC. This will prompt you for the password, which is rock.
 
 Then now to go headless, you would need to go to nano /boot/uEnv.txt of the OBC and remove the line with `console=ttyAML0,115200`. I think this ttyAML0 refers to the specific serial port which you are debugging from. Removing this line means that you do not using this port as a console anymore.
 
