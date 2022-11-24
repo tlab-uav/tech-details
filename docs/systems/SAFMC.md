@@ -117,3 +117,10 @@ pu rtscts           No
 3. With the above steps, you can then plug in your power supply to power up the OBC. Minicom should be able to auto detect the OBC and display the OBC's terminal on the terminal that you ran Minicom.
 4. So in a way this feels like an SSH. You can now control the OBC from your existing main OS.
 
+#### Installing ROS and MAVROS
+
+So with internet setup, you can now install ROS and MAVROS. To install ROS Noetic, go to `http://wiki.ros.org/noetic/Installation/Ubuntu`. To install MAVROS, go through the instructions listed here `https://docs.px4.io/main/en/ros/mavros_installation.html`
+
+:::note 
+You can choose other versions but the lab codes are currently tested with Noetic
+:::
