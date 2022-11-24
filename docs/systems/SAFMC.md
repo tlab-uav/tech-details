@@ -124,3 +124,37 @@ So with internet setup, you can now install ROS and MAVROS. To install ROS Noeti
 :::note 
 You can choose other versions but the lab codes are currently tested with Noetic
 :::
+
+#### Creating Access Point
+
+There's a need to create an access point from radxa. Do the follow steps as introduced in `https://github.com/matthewoots/documentation/blob/main/radxa-zero/radxa-remove-autoboot-countdown.md`
+
+1. To follow the steps, you need to clone a u-boot.git and then change a config file according to the instructions in the provided github page. However, you will realize that there is no such config file because the repo is updated. Need to rollback to an older version. git checkout origin/radxa-zero-v2021.07. Follow the rest of the steps in the instructions and it should work.
+
+#### SSH into Radxa and going headless (No more debug port connection)
+
+There is a need to go headless because right now, the serial port is being used as a debug port (meaning that it can be connected to a ground laptop for debugging purposes). However, since the serial port is being used as a debugging port, you can't use it as a communication port to the flight controller. Because utimately, the flight controller and OBC are communicating via this same serial port. So You have to disable this port on the OBC as a debug port.
+
+But first, we will setup SSH first. 
+
+To set up SSH, there is a need to do the following:
+
+1. Make sure that the ground laptop or workstation is connected to the same network as your OBC. In this case, if you are in NUS, then they have to be connected to the same router. 
+2. You can either do this by using Minicom or you can use the method of using a micro HDMI to enter the Radxa terminal.
+  2.1Not sure if this step is necessary but might need to enable password authentication by changing config file of the ssh. Go into ssh config file by the command `nano \url{/etc/ssh/sshd_config}` and change password authentication to yes and challengeresponseauthetication to no. Then restart your ssh with `sudo systemctl reload sshd`
+3. Check the ip address assigned to your obc by doing ifconfig.
+4. Make sure that you ground laptop can ssh as well.
+5. Then do the following command ssh rock@{localhost} where localhost is the ipaddress of the OBC. This will prompt you for the password, which is rock.
+
+Then now to go headless, you would need to go to nano /boot/uEnv.txt of the OBC and remove the line with `console=ttyAML0,115200`. I think this ttyAML0 refers to the specific serial port which you are debugging from. Removing this line means that you do not using this port as a console anymore.
+
+#### Connecting to QGroundControl
+
+QGroundControl can be paired with any flight controller that has PX4 installed. In this case, the flight controller has PX4 installed. I think there are a few ways of connecting QGroundControl, seems like wifi etc works. But at the bottom of the flight controller there is a micro USB B connector. Use that to connect the flight controller to the QGroundControl app. Seems like detection is automatic. Then you can see the parameters of the flight controller etc. Can play around with it.
+
+#### Connecting RF receiver to the Flight Controller
+
+Refer to figure below and you can see some pinouts stating 4.5V, GND and SBUS. Solder the wires to a connector such that you can connect it to the RF receiver.
+![](./SAFMC/assets/flywoo.PNG)
+
+Then refer to Fig. \ref{rf} and you can see how the wires should be connected to the connector. Once done, you can plug the RF receiver to the connector accordingly. 
