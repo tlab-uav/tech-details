@@ -13,15 +13,11 @@ These are the components required to build a SAFMC Drone
 2. Flight controller (F405 Flywoo) - This is the low level controller that contains the PX4 software which will then drive the motors.
 3. On the OBC there's the antenna which needs to be attached, otherwise could have surge in power and spoil the OBC.
 
-:::tip
-Add to the `<remap from="/vrpn_client_node/*****/pose" to="/mavros/vision_pose/pose" />` in sample.launch in the **Launch Setup**.
-:::
-
 ### Hardware Fix
 
 These are some of the steps required to get the hardware set-up
 
-1.  Need to solder red wire to 5V and black wire to GND and a USB C connector. Then heat shrink for final touch
+1. Need to solder red wire to 5V and black wire to GND and a USB C connector. Then heat shrink for final touch
 2. The serial port pins (the three pins on the Radxa) need to be soldered onto the OBC (see Fig. \ref{obc})
 
 
