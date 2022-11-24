@@ -31,6 +31,11 @@ These are some of the steps required to get the hardware set-up
 Last time, the OBC was driven directly by the battery pack. However, now they are going to use the output tapping points of the flight controller to draw 5V to the OBC. (see Fig. \ref{pinout} which shows the 5V and GND pinout.).
 :::
 
+### Software Fix
+
+#### Radxa Setup
+
+Flashing the Ubuntu OS into the OBC via eMMC. eMMC is like a non-volatile storage device. There is also another way of flashing using microSD card. An introduction is listed here: `https://wiki.radxa.com/Zero/getting_started`. The generic steps are as listed below. Follow the following closely: \url{https://github.com/matthewoots/documentation/blob/main/radxa-zero/radxa-flash-backup-image.md}
 1. Git clone the **VRPN official repository** from `https://github.com/ros-drivers/vrpn_client_ros`. Clone this into the `src` directory of your catkin_ws along with the Auto Fast Flt_drone or the other modules.
 ``` bash
     git clone https://github.com/ros-drivers/vrpn_client_ros
