@@ -35,25 +35,28 @@ Last time, the OBC was driven directly by the battery pack. However, now they ar
 
 #### Radxa Setup
 
-Flashing the Ubuntu OS into the OBC via eMMC. eMMC is like a non-volatile storage device. There is also another way of flashing using microSD card. An introduction is listed here: `https://wiki.radxa.com/Zero/getting_started`. The generic steps are as listed below. Follow the following closely: \url{https://github.com/matthewoots/documentation/blob/main/radxa-zero/radxa-flash-backup-image.md}
-1. Git clone the **VRPN official repository** from `https://github.com/ros-drivers/vrpn_client_ros`. Clone this into the `src` directory of your catkin_ws along with the Auto Fast Flt_drone or the other modules.
-``` bash
-    git clone https://github.com/ros-drivers/vrpn_client_ros
+Flashing the Ubuntu OS into the OBC via eMMC. eMMC is like a non-volatile storage device. There is also another way of flashing using microSD card. An introduction is listed here: `https://wiki.radxa.com/Zero/getting_started`. For flashing using eMMC, follow the website closely `https://github.com/matthewoots/documentation/blob/main/radxa-zero/radxa-flash-backup-image.md`.
+
+1. You need to flash using a ground laptop/workstation. Follow `https://github.com/matthewoots/documentation/blob/main/radxa-zero/radxa-uboot-usb.md`.The boot-g12.py comes from the package pyamlboot which you were told to install in the documentation.
+```bash
+sudo apt install pip3
+sudo pip3 install pyamlboot
+# Press the boot button before connecting the PC to the Radxa Zero
+lsusb
+# lsusb should show Armlogic, Inc. GX-CHIP
+# You should download the rz-udisk-loader.bin from the the files folder in this repo
+sudo boot-g12.py <path to rz-udisk-loader.bin>
 ```
+2. Need to get a image burner. Get balenaEtcher
+```bash
+# Go and get Balena Etcher at https://github.com/balena-io/etcher/releases
+# or you can get this release link for v1.7.9
+cd Downloads
+wget https://github.com/balena-io/etcher/releases/download/v1.7.9/balenaEtcher-1.7.9-x64.AppImage 
 
-2. Go into **vrpn_client_ros/launch** and change the **sample.launch** file. 
-
-``` xml
-    <arg name="server" default="******"/> 
-    - replace with the IP of computer hosting Vicon.
-
-    <remap from="/vrpn_client_node/*****/pose" to="/mavros/vision_pose/pose" /> 
-    - replace with the object name created in Vicon.
+sudo chmod +x balenaEtcher-1.7.9-x64.AppImage
+./balenaEtcher-1.7.9-x64.AppImage
+# Load the image onto the board
 ```
-3. Go back to the catkin_ws directory and `catkin build`.
-
-4. Now you are able to launch the VRPN client node using `roslaunch vrpn_client_ros sample.launch`. Test to see whether there are topics published via opening another terminal and 
-``` bash
-    rostopic list 
-    rostopic echo /mavros/vision_pose/pose
-```
+3. Find the correct image in \url{https://github.com/radxa/debos-radxa/releases} Get this version radxa-zero-ubuntu-focal-server-arm64-20220804-0400-mbr.img.xz (this version has been tried and tested and compatible with existing software used in TLab).
+4. To flash, first press the boot button at the underside of the Radxa. Then connect the OBC's power port to the USB connection (find the required cable to do this connection) of your ground laptop/workstation. Launch balena and it should be able to detect that you have a device connected to a USB. Flash the ubuntu through that USB port.
