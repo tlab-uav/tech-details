@@ -19,12 +19,14 @@ Add to the `<remap from="/vrpn_client_node/*****/pose" to="/mavros/vision_pose/p
 
 ### Hardware Fix
 
+These are some of the steps required to get the hardware set-up
+
+1.  Need to solder red wire to 5V and black wire to GND and a USB C connector. Then heat shrink for final touch
+2. The serial port pins (the three pins on the Radxa) need to be soldered onto the OBC (see Fig. \ref{obc})
+
+
 :::note 
-Important to download the **VRPN library** on ROS. The Debian package can be downloaded via the commands below :
-``` bash
-sudo apt-get update
-sudo apt-get install ros-melodic-vrpn-client-ros
-```
+Last time, the OBC was driven directly by the battery pack. However, now they are going to use the output tapping points of the flight controller to draw 5V to the OBC. (see Fig. \ref{pinout} which shows the 5V and GND pinout.).
 :::
 
 1. Git clone the **VRPN official repository** from `https://github.com/ros-drivers/vrpn_client_ros`. Clone this into the `src` directory of your catkin_ws along with the Auto Fast Flt_drone or the other modules.
