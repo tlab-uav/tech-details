@@ -45,7 +45,7 @@ sudo pip3 install pyamlboot
 lsusb
 # lsusb should show Armlogic, Inc. GX-CHIP
 # You should download the rz-udisk-loader.bin from the the files folder in this repo
-sudo boot-g12.py <path to rz-udisk-loader.bin>
+sudo boot-g12.py <path to rz-udisk-loader.bin>    # Get from `https://github.com/matthewoots/documentation/blob/main/files/rz-udisk-loader.bin`
 ```
 2. Need to get a image burner. Get balenaEtcher
 ```bash
