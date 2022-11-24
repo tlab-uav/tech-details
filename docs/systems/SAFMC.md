@@ -129,7 +129,7 @@ You can choose other versions but the lab codes are currently tested with Noetic
 
 There's a need to create an access point from radxa. Do the follow steps as introduced in `https://github.com/matthewoots/documentation/blob/main/radxa-zero/radxa-remove-autoboot-countdown.md`
 
-1. To follow the steps, you need to clone a u-boot.git and then change a config file according to the instructions in the provided github page. However, you will realize that there is no such config file because the repo is updated. Need to rollback to an older version. git checkout origin/radxa-zero-v2021.07. Follow the rest of the steps in the instructions and it should work.
+1. To follow the steps, you need to clone a u-boot.git and then change a config file according to the instructions in the provided github page. However, you will realize that there is no such config file because the repo is updated. Need to rollback to an older version. `git checkout origin/radxa-zero-v2021.07`. Follow the rest of the steps in the instructions and it should work.
 
 #### SSH into Radxa and going headless (No more debug port connection)
 
