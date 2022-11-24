@@ -10,6 +10,8 @@ sidebar_label: Building SAFMC Drone
 These are the components required to build a SAFMC Drone
 
 1. Radxa-zero - This is the onboard computer (OBC). See Fig. \ref{obc}
+![](./SAFMC/assets/Slide1.JPG)
+
 2. Flight controller (F405 Flywoo) - This is the low level controller that contains the PX4 software which will then drive the motors.
 3. On the OBC there's the antenna which needs to be attached, otherwise could have surge in power and spoil the OBC.
 
