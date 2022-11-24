@@ -193,6 +193,9 @@ module.exports = {
       'Vicon': [
           'systems/vicon',
       ],
+      'SAFMC Drone Build': [
+          'systems/SAFMC',
+      ],
       'Auto Fast Flt Platform':[
         'systems/pixhawk/getting-started'
       ],
