@@ -1,26 +1,23 @@
 ---
 hide_title: true
-sidebar_label: Vicon Setup
+sidebar_label: Building SAFMC Drone
 ---
 
-## Vicon Setup
+## Building SAFMC Drone
 
-### Vicon Object Setup 
+### Components Required
 
-1. Place the **Vicon balls** (about 3 or 4) onto the drone. It should be visible for the Vicon cameras to track.
+These are the components required to build a SAFMC Drone
 
-2. Place the object into the Vicon tracking area, and someone at the computer should be able to see the various points of the vicon balls in the program.
+1. Radxa-zero - This is the onboard computer (OBC). See Fig. \ref{obc}
+2. Flight controller (F405 Flywoo) - This is the low level controller that contains the PX4 software which will then drive the motors.
+3. On the OBC there's the antenna which needs to be attached, otherwise could have surge in power and spoil the OBC.
 
-![](./vicon/assets/viconballs-autox200.jpg) ![](./vicon/assets/Motion-Capture-Markers-autox200.jpg)
-
-3. **Select all** the Vicon trackable points by `ctrl` or `shift` and clicking all the points in the area. 
-
-4. Create a **name** for the object, and add it into the Vicon program and track it.
 :::tip
 Add to the `<remap from="/vrpn_client_node/*****/pose" to="/mavros/vision_pose/pose" />` in sample.launch in the **Launch Setup**.
 :::
 
-### Launch Setup
+### Hardware Fix
 
 :::note 
 Important to download the **VRPN library** on ROS. The Debian package can be downloaded via the commands below :
