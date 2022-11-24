@@ -41,7 +41,7 @@ Flashing the Ubuntu OS into the OBC via eMMC. eMMC is like a non-volatile storag
 ```bash
 sudo apt install pip3
 sudo pip3 install pyamlboot
-# Press the boot button before connecting the PC to the Radxa Zero
+# Press the boot button before connecting the PC to the Radxa Zero. Check here for picture of boot button `https://wiki.radxa.com/mw/images/e/e2/Radxa_zero_ports.jpg`
 lsusb
 # lsusb should show Armlogic, Inc. GX-CHIP
 # You should download the rz-udisk-loader.bin from the the files folder in this repo
