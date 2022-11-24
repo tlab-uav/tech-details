@@ -127,7 +127,9 @@ You can choose other versions but the lab codes are currently tested with Noetic
 
 #### Creating Access Point
 
-There's a need to create an access point from radxa. Do the follow steps as introduced in `https://github.com/matthewoots/documentation/blob/main/radxa-zero/radxa-remove-autoboot-countdown.md`
+There's a need to create an access point from radxa. Do the follow steps as introduced in `https://github.com/matthewoots/documentation/blob/main/radxa-zero/radxa-remove-autoboot-countdown.md`. I think what this is doing is that because at the end of the tutorial, we would ideally have the serial port of the OBC connected to the flight controller. When we power on the OBC, what the bootloader will usually do is that it will keep do a countdown and check for any disruption. So if we have the serial port of OBC connected to the flight controller, then there will be some input signal going to the serial port and hence keep disrupting the bootloading process. Therefore the OBC cannot boot up.
+
+So the instructions tries to go into fastboot mode, which means don't do a count down and just immediately boot up. Which means you have to amend the config file to the bootloader. Remember that at the start of the tutorial, we flash the Ubuntu OS into eMMC, which is a non-volatile storage device on the OBC? Similarly, this bootloader is also stored in the eMMC. So how should we amend this config file? We have to clone the bootloader from the radxa github page, rebuild the binaries, ie `u-boot.bin` and then replace the u-boot.bin file in the eMMC (which is the `dd` step in the instruction).
 
 1. To follow the steps, you need to clone a u-boot.git and then change a config file according to the instructions in the provided github page. However, you will realize that there is no such config file because the repo is updated. Need to rollback to an older version. `git checkout origin/radxa-zero-v2021.07`. Follow the rest of the steps in the instructions and it should work.
 
