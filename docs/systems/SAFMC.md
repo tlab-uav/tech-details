@@ -60,3 +60,25 @@ sudo chmod +x balenaEtcher-1.7.9-x64.AppImage
 ```
 3. Find the correct image in \url{https://github.com/radxa/debos-radxa/releases} Get this version radxa-zero-ubuntu-focal-server-arm64-20220804-0400-mbr.img.xz (this version has been tried and tested and compatible with existing software used in TLab).
 4. To flash, first press the boot button at the underside of the Radxa. Then connect the OBC's power port to the USB connection (find the required cable to do this connection) of your ground laptop/workstation. Launch balena and it should be able to detect that you have a device connected to a USB. Flash the ubuntu through that USB port.
+
+
+Once the OBC is flashed, then when you power on the OBC, it will now run the Ubuntu os.To start up Radxa standalone, you need to:
+
+1. Plug in the power port from an external power supply
+2. Connect the keyboard 
+3. Connect micro HDMI from the OBC to a monitor
+4. Once started up, username and password are 'rock'
+
+#### Connecting to wifi
+
+Instructions taken from \url{https://www.linuxfordevices.com/tutorials/ubuntu/connect-wifi-terminal-command-line}. But essentially the following steps:
+
+1. Run the following command to check SSID: `nmcli dev wifi list`
+2. Run the following to connect to specified network: `sudo nmcli --ask dev wifi connect <SSID>`
+3. Password will be prompted. Key in password and should be good to go
+  
+Connecting to wifi in NUS is a problem because NUS network requires your username in addition to the SSID. To make things simpler, get a router to provide the SSID.
+
+1. Get a router and connect the router via ethernet to the NUS network
+2. Use your own laptop/desktop to connect to the router's SSID and password. It will then prompt you to key in your NUS details (NUS user name and password). After this, the router connection to NUS will be set up.
+3. Then now you can use the above method to connect the OBC to the router. 
