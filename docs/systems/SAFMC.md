@@ -71,7 +71,7 @@ Once the OBC is flashed, then when you power on the OBC, it will now run the Ubu
 
 #### Connecting to wifi
 
-Instructions taken from \url{https://www.linuxfordevices.com/tutorials/ubuntu/connect-wifi-terminal-command-line}. But essentially the following steps:
+Instructions taken from `https://www.linuxfordevices.com/tutorials/ubuntu/connect-wifi-terminal-command-line`. But essentially the following steps:
 
 1. Run the following command to check SSID: `nmcli dev wifi list`
 2. Run the following to connect to specified network: `sudo nmcli --ask dev wifi connect <SSID>`
@@ -81,4 +81,39 @@ Connecting to wifi in NUS is a problem because NUS network requires your usernam
 
 1. Get a router and connect the router via ethernet to the NUS network
 2. Use your own laptop/desktop to connect to the router's SSID and password. It will then prompt you to key in your NUS details (NUS user name and password). After this, the router connection to NUS will be set up.
-3. Then now you can use the above method to connect the OBC to the router. 
+3. Then now you can use the above method to connect the Radxa to the router. 
+
+
+#### How to startup Radxa tereminal on Your Laptop/Desktop's OS
+
+Because Radxa has no GUI, it might be better to run the Radxa's terminal on top of an existing desktop OS like Ubuntu. So that you can copy and paste and browse the web. So what you need is the following:
+
+1. You need to connect the serial debug port on the Radxa to a USB for communication with the desktop. (Don't connect the power supply to the board yet).
+2. Download minicom, which is a software that can be used to communicate with Radxa through serial port. see `https://wiki.radxa.com/Zero/dev/serial-console`. In general the steps are:
+  2.1 Add current user to the plugdev group so that can access serial device without root permission.
+  2.2 Then edit bashrc with alias minicom and default settings
+  2.3 Run the command 'minicom zero'
+  2.4 After running, you can press Crtl+X and then followed by z to set configurations.
+```bash
+# Download Minicom
+sudo apt-get update
+sudo apt-get install minicom
+#First let's add the current user to plugdev group so we can access serial device without root permission.
+sudo usermod -a -G plugdev $USER
+# Edit your ~/.bashrc and add the following line so minicom will always be launched with the following default setting
+alias minicom='minicom -w -t xterm -l -R UTF-8'
+
+#Login to a new terminal to for the change to take effect.
+#Create and edit file ~/.minirc.zero with the following content:
+pu port             /dev/ttyUSB0
+pu baudrate         115200
+pu bits             8
+pu parity           N
+pu stopbits         1
+pu rtscts           No
+
+#Now executing minicom zero will use the config above, and connect to Radxa Zero's serial console.
+```
+3. With the above steps, you can then plug in your power supply to power up the OBC. Minicom should be able to auto detect the OBC and display the OBC's terminal on the terminal that you ran Minicom.
+4. So in a way this feels like an SSH. You can now control the OBC from your existing main OS.
+
