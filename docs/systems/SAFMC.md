@@ -157,4 +157,6 @@ QGroundControl can be paired with any flight controller that has PX4 installed. 
 Refer to figure below and you can see some pinouts stating 4.5V, GND and SBUS. Solder the wires to a connector such that you can connect it to the RF receiver.
 ![](./SAFMC/assets/flywoo.PNG)
 
-Then refer to Fig. \ref{rf} and you can see how the wires should be connected to the connector. Once done, you can plug the RF receiver to the connector accordingly. 
+Then refer to the figure below and you can see how the wires should be connected to the connector. Once done, you can plug the RF receiver to the connector accordingly. 
+
+![](./SAFMC/assets/rf.PNG)
