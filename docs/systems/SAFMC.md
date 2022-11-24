@@ -160,3 +160,7 @@ Refer to figure below and you can see some pinouts stating 4.5V, GND and SBUS. S
 Then refer to the figure below and you can see how the wires should be connected to the connector. Once done, you can plug the RF receiver to the connector accordingly. 
 
 ![](./SAFMC/assets/rf.PNG)
+
+With that, you can set up the remote control (in this case we are using the remote control as seen below) to pair with the RF receiver. There is a button on the RF receiver which you can press. Press and hold it while you plug in the USB-b connector to the flight controller (F405). Then go to QGroundControl.
+
+![](./SAFMC/assets/controller.jpg)
