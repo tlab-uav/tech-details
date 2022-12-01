@@ -181,6 +181,7 @@ so perform the following:
 ```bash
 #Connect your F405 to the QGroundControl (via wifi or USB)
 git clone https://github.com/matthewoots/PX4-Autopilot.git
+cd PX4-Autopilot
 git submodule update --init --recursive
 make flywoo_f405s_aio upload #if you want to upload directly to the F405. Make sure QGroundControl is closed. There can only be one port communicating at one time. If just want the build files, then just do `make flywoo_f405s_aio`
 ```
