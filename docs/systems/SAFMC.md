@@ -143,7 +143,7 @@ To set up SSH, there is a need to do the following:
 
 1. Make sure that the ground laptop or workstation is connected to the same network as your OBC. In this case, if you are in NUS, then they have to be connected to the same router. 
 2. You can either do this by using Minicom or you can use the method of using a micro HDMI to enter the Radxa terminal.
-  2.1Not sure if this step is necessary but might need to enable password authentication by changing config file of the ssh. Go into ssh config file by the command `nano \url{/etc/ssh/sshd_config}` and change password authentication to yes and challengeresponseauthetication to no. Then restart your ssh with `sudo systemctl reload sshd`
+  2.1Not sure if this step is necessary but might need to enable password authentication by changing config file of the ssh. Go into ssh config file by the command `nano /etc/ssh/sshd_config` and change password authentication to yes and challengeresponseauthetication to no. Then restart your ssh with `sudo systemctl reload sshd`
 3. Check the ip address assigned to your obc by doing ifconfig.
 4. Make sure that you ground laptop can ssh as well.
 5. Then do the following command `ssh rock@{localhost}` where `localhost` is the ipaddress of the OBC. This will prompt you for the password, which is rock.
@@ -165,7 +165,24 @@ Then refer to the figure below and you can see how the wires should be connected
 
 With that, you can set up the remote control (in this case we are using the remote control as seen below) to pair with the RF receiver. There is a button on the RF receiver which you can press. Press and hold it while you plug in the USB-b connector to the flight controller (F405). Then go to QGroundControl.
 
+There is also a need to check which channel the RF is communicating on (ie SBUS). There should be a blue light on the receiver if so. If not, there is a need to configure it to comms via SBUS. On the RF packaging there should be a manual. Look at the manual for more instructions.
+
+To check if the receiver is connected, go to QGroundControl and go to the radio tab to check if the flight controller responds to the control movements.
+
 ![](./SAFMC/assets/controller.jpg)
+
+To connect the controller to the RF receiver, set the profile first, then go bind the receiver to the controller.
+
+### Flashing the PX4 firmware to the AIO Flight Controller
+
+Go to the following URL `https://github.com/matthewoots/PX4-Autopilot`. Checkout at the branch  `f405-v1.13.0`. Note that this is different from the official PX4-Autopilot in the sense that in `boards` folder, there is a board file catered specifically for f405 flight controller. 
+
+so perform the following:
+Connect your F405 to the QGroundControl (via wifi or USB)
+` git clone https://github.com/matthewoots/PX4-Autopilot.git`
+`git submodule update --init --recursive`
+`make flywoo_f405s_aio upload` if you want to upload directly to the F405. Make sure QGroundControl is closed. There can only be one port communicating at one time. If just want the build files, then just do `make flywoo_f405s_aio`
+
 
 ### Additional Resources
 
