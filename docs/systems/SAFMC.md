@@ -178,11 +178,12 @@ To connect the controller to the RF receiver, set the profile first, then go bin
 Go to the following URL `https://github.com/matthewoots/PX4-Autopilot`. Checkout at the branch  `f405-v1.13.0`. Note that this is different from the official PX4-Autopilot in the sense that in `boards` folder, there is a board file catered specifically for f405 flight controller. 
 
 so perform the following:
-Connect your F405 to the QGroundControl (via wifi or USB)
+```bash
+#Connect your F405 to the QGroundControl (via wifi or USB)
 ` git clone https://github.com/matthewoots/PX4-Autopilot.git`
 `git submodule update --init --recursive`
-`make flywoo_f405s_aio upload` if you want to upload directly to the F405. Make sure QGroundControl is closed. There can only be one port communicating at one time. If just want the build files, then just do `make flywoo_f405s_aio`
-
+`make flywoo_f405s_aio upload` #if you want to upload directly to the F405. Make sure QGroundControl is closed. There can only be one port communicating at one time. If just want the build files, then just do `make flywoo_f405s_aio`
+```
 
 ### Additional Resources
 
