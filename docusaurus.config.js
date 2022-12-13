@@ -109,6 +109,10 @@ module.exports = {
                   label: 'SAFMC Drone Buildup',
                   to: 'docs/systems/SAFMC'
                 },
+                {
+                  label: 'Crazyflie',
+                  to: 'docs/systems/Crazyflie'
+                },
               ]
             },
     
