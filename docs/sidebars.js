@@ -196,6 +196,9 @@ module.exports = {
       'SAFMC Drone Build': [
           'systems/SAFMC',
       ],
+      'Crazyflie': [
+            'systems/Crazyflie',
+        ],
       'Auto Fast Flt Platform':[
         'systems/pixhawk/getting-started'
       ],
