@@ -49,4 +49,8 @@ After which, you can launch the cfclient, on your terminal by typing `cfclient`.
 
 You should then see your crazyflie hover.
 
+### Setting up Crazyflie Radio
+
+Take a look at this url `https://github.com/orgs/bitcraze/discussions/326`
+
 
