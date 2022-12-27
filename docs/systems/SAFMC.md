@@ -186,6 +186,14 @@ git submodule update --init --recursive
 make flywoo_f405s_aio upload #if you want to upload directly to the F405. Make sure QGroundControl is closed. There can only be one port communicating at one time. If just want the build files, then just do `make flywoo_f405s_aio`
 ```
 
+### Adding ESP32 Radio 
+
+ESP32 is a radio that is faster than communicating via the TCP/IP protocol. It can be integrated with the flight controller board. One ESP32 radio will be attached to the Drone via serial port while the other will be attached to the ground laptop (USB port). In general, some code will be uploaded into the ESP32 board which allows it to transmit and receives messages continuously from its serial connection.
+
+1. To start writing the code to be uploaded into the radio, you need have an arduino IDE and set up your IDE to work with ESP32 board (because it requires prerequisite packages like esp_now.h etc). Look here `https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/`.
+
+2. Afterwhich, you can start writing the code to be uploaded. Some examples are as follows: `https://randomnerdtutorials.com/esp-now-two-way-communication-esp32/`
+
 ### Additional Resources
 
 `https://github.com/radxa/documentation/tree/master/rs102`
