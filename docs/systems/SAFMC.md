@@ -194,6 +194,8 @@ ESP32 is a radio that is faster than communicating via the TCP/IP protocol. It c
 
 2. Afterwhich, you can start writing the code to be uploaded. Some examples are as follows: `https://randomnerdtutorials.com/esp-now-two-way-communication-esp32/`
 
+For actual flight, you need to make sure the baud rate at which each radio is receiving and transmitting is the same (recommended 57600). For the ESP32 boards, this has to be configured in the code that you will upload to the board. For the drones, you have to configure it in the QGroundControl.Set baud rate telem2 to 57600 (or which ever baud rate to be consistent).
+
 ### Additional Resources
 
 `https://github.com/radxa/documentation/tree/master/rs102`
