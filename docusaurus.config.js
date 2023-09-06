@@ -94,7 +94,7 @@ module.exports = {
                 {
                   // activeBasePath:'docs/systems/',
                   label: 'MultiAgent PX4 SITL',
-                  to: 'docs/systems/multi-agent-px4-sitl'
+                  to: 'docs/systems/multiagentPX4'
                 },
                 {
                   // activeBasePath:'docs/systems/',
