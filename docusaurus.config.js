@@ -93,6 +93,11 @@ module.exports = {
                 },
                 {
                   // activeBasePath:'docs/systems/',
+                  label: 'Multi-agent PX4 SITL',
+                  to: 'docs/systems/multi-agent-px4-sitl'
+                },
+                {
+                  // activeBasePath:'docs/systems/',
                   label: 'Vicon',
                   to: 'docs/systems/vicon'
                 },
