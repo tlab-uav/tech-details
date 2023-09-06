@@ -2,6 +2,7 @@
 id: multi-agent px4 sitl
 title: Multi-agent PX4 SITL
 sidebar_label: Multi-agent PX4 SITL
+
 ---
 
 # Lessons Learnt from launching multiple instances of PX4 SITL
