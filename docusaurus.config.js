@@ -173,6 +173,11 @@ module.exports = {
                   label: 'UI/UX Tools',
                   to: 'docs/productivity/uiux/pangolin'
                 },
+                {
+                  activeBasePath:'docs/productivity/git',
+                  label: 'Conceptualizing Git',
+                  to: 'docs/productivity/git/gitConcepts'
+                },
               ]
             },
 
