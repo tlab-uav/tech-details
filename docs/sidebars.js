@@ -210,7 +210,10 @@ module.exports = {
         'systems/pixhawk_v1/tracking-and-detection',
         'systems/pixhawk_v1/simulator',
         'systems/pixhawk_v1/web-ui',
-    ],
+      ],
+      'SAFMC IDP 2023': [
+        'systems/SAFMC_IDP_2023',
+      ],
   },
 
 };

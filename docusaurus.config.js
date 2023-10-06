@@ -118,6 +118,10 @@ module.exports = {
                   label: 'Crazyflie',
                   to: 'docs/systems/Crazyflie'
                 },
+                {
+                  label: 'SAFMC IDP',
+                  to: 'docs/systems/SAFMC_IDP_2023'
+                },
               ]
             },
     
