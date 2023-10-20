@@ -212,7 +212,8 @@ module.exports = {
         'systems/pixhawk_v1/web-ui',
       ],
       'SAFMC IDP 2023': [
-        'systems/SAFMC_IDP_2023',
+        'systems/SAFMC_IDP_2023/SAFMC_IDP_2023',
+        'systems/SAFMC_IDP_2023/Simulation',
       ],
   },
 

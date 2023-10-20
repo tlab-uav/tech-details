@@ -120,7 +120,7 @@ module.exports = {
                 },
                 {
                   label: 'SAFMC IDP',
-                  to: 'docs/systems/SAFMC_IDP_2023'
+                  to: 'docs/systems/SAFMC_IDP_2023/SAFMC_IDP_2023'
                 },
               ]
             },
