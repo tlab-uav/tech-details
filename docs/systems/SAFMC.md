@@ -76,7 +76,7 @@ Make sure to connect the Radxa Zero antenna (if board has external antenna suppo
 
 - Motors are wired in betaflight motor ordering. Refer the image below for reference.
 
-![](./SAFMC/assets/betaflight -motor-ordering.jpeg)
+![](./SAFMC/assets/betaflight-motor-ordering.jpeg)
 
 - Wiring for serial communication between FC and OBC should be established as given below in the table
 
@@ -110,7 +110,7 @@ Last time, the OBC was driven directly by the battery pack. However, now they ar
   - Refer to wiring diagram above and you can see some pinouts stating 4.5V, GND and SBUS. Solder the wires to a connector such that you can connect it to the RF receiver.
   - Then refer to the figure below and you can see how the wires should be connected to the connector. Once done, you can plug the RF receiver to the connector accordingly. 
 
-<img src={rf_img} style={{width: 700}} />
+![](./SAFMC/assets/controller.jpg)
 
 - RC Tx & Rx Binding Procedure:
     - With that, you can set up the RC Transmitter (RC Tx)/Radio (in this case we are using the remote control as seen below) to pair with the RC Receiver (RC Rx).
@@ -164,7 +164,7 @@ ESP32 is a radio that is faster than communicating via the TCP/IP protocol. It c
     - [BLHeli Configurator Download Link](https://github.com/blheli-configurator/blheli-configurator/releases)
   - Reboot the flight controller 
   - Use Betaflight Configurator to check the motor directions. The motor directions (prop-in configuration) and numbering should be the same as indicated in the below image.
-  ![](./SAFMC/assets/betaflight -motor-ordering.jpeg)
+  ![](./SAFMC/assets/betaflight-motor-ordering.jpeg)
   - If the motor direction are not same as indicated in the image, note the motor number and use BLHeli Configurator to change the motor direction.
 
 ### PX4 Bootloader Flashing
@@ -182,8 +182,9 @@ make omnibusf4sd_bl
 
 ```
 >INFO: 
-> If any python based error occurs, use `sudo apt install python-is-python2`.
-> If any PX4 build error occurs, setup the PX4 developer environment using `Step 1` of Building and flashing PX4 firmware, and repeat the above procedure.
+> 1. If any python based error occurs, use `sudo apt install python-is-python2`.
+> 2. If any PX4 build error occurs, setup the PX4 developer environment using `Step 1` of Building and flashing PX4 firmware, and repeat the above procedure.
+
 2. The build file should be available in `path_to/PX4-Bootloader/build/omnibusf4sd_bl`
 3. Install the PX4 Bootloader using Betaflight configurator
   - Connect the flight controller to the computer using USB and start the Betaflight configurator
@@ -232,7 +233,7 @@ make flywoo_f405s_aio_mpu6000
 make <board_name> upload
 
 ```
-    + Reboot the flight controller
+  + Reboot the flight controller
 
 ### System setup and configuration using QGroundControl
 1. Connect the flight controller to the computer 
@@ -265,7 +266,7 @@ make <board_name> upload
 ### Additional Information
 
 #### Parameter Configuration
-> INFO: Given below are some parameters list for your reference
+> INFO: Given below are some parameters list for reference
 
 ```yaml
 
@@ -602,7 +603,7 @@ overlays=meson-g12a-uart-ao-b-on-gpioao-2-gpioao-3
 
 ### 7. Additional information
 
-#### How to startup Radxa terminal on Your Laptop/Desktop's OS
+#### + How to startup Radxa terminal on Your Laptop/Desktop's OS
 
 Because Radxa has no GUI, it might be better to run the Radxa's terminal on top of an existing desktop OS like Ubuntu. So that you can copy and paste and browse the web. So what you need is the following:
 
@@ -635,7 +636,7 @@ pu rtscts           No
 3. With the above steps, you can then plug in your power supply to power up the OBC. Minicom should be able to auto detect the OBC and display the OBC's terminal on the terminal that you ran Minicom.
 4. So in a way this feels like an SSH. You can now control the OBC from your existing main OS.
 
-#### Clone your Radxa device as an image
+#### + Clone your Radxa device as an image
 ```bash
 
 # Hold boot button and connect radxa to pc, run the following command
@@ -666,7 +667,7 @@ tar -czf $IMAGE_NAME.tar.gz $IMAGE_NAME.img
 ```
 [Reference](https://github.com/matthewoots/documentation/blob/main/radxa-zero/radxa-flash-backup-image.md)
 
-#### ssh into Radxa
+#### + ssh into Radxa
 ```bash
 
 # Get RADXA_IP_ADDR from ifconfig on the radxa device
@@ -693,7 +694,7 @@ Host robot
 ```
 Now you can access the Radxa using `ssh robot`
 
-#### Additional Resources
+#### + Additional Resources
 
 `https://github.com/radxa/documentation/tree/master/rs102`
 
