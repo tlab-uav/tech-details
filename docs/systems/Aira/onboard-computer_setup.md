@@ -1,6 +1,6 @@
 ---
 hide_title: true
-sidebar_label: On-Board Computer: Setup & Installation
+sidebar_label: "On-Board Computer: Setup & Installation"
 ---
 
 # On-Board Computer: Setup & Installation 
@@ -41,23 +41,23 @@ Open the NVIDIA SDK Manager. Select the correct JetPack version for Target Opera
 
 Then, continue to Step 2. 
 
-![](./Aira/assets/obc_001.avif)
+![](./assets/obc_001.avif)
 
 Choose only “Jetson Linux”, accept the terms & conditions and continue to Step 3. 
 
-![](./Aira/assets/obc_002.avif)
+![](./assets/obc_002.avif)
 
 The SDK Manager will ask the username’s password. Fill it and continue.
 
-![](./Aira/assets/obc_003.avif)
+![](./assets/obc_003.avif)
 
-![](./Aira/assets/obc_004.avif)
+![](./assets/obc_004.avif)
 
 After the Jetson OS has been created, the SDK Manager asks the Jetson module’s flashing style. Just skip it and exit from the SDK Manager. 
 
-![](./Aira/assets/obc_005.avif)
+![](./assets/obc_005.avif)
 
-![](./Aira/assets/obc_006.avif)
+![](./assets/obc_006.avif)
 
 Open the target HW image folder. 
 
@@ -76,7 +76,7 @@ Orin NX: ~/nvidia/nvidia_sdk/JetPack_6.1_Linux_JETSON_ORIN_NX_TARGETS/
 For JetPack-6.2 
 Orin NX: ~/nvidia/nvidia_sdk/JetPack_6.2_Linux_JETSON_ORIN_NX_TARGETS/ 
  
-![](./Aira/assets/obc_007.avif)
+![](./assets/obc_007.avif)
 
 For JetPack-6.0: 
 
@@ -92,56 +92,49 @@ Download the BSP files from GitHub link and extract it (Orin NX).
 
 Hint: The following steps have done for Orin NX, but they are the same for the other Jetson module types (only the BSP files are different). 
 
-![](./Aira/assets/obc_008.avif)
+![](./assets/obc_008.avif)
 
 Copy all files to the target HW image folder. 
 
-![](./Aira/assets/obc_009.avif)
+![](./assets/obc_009.avif)
 
 Open a Terminal in the “Linux_for_Tegra” folder. 
 
-![](./Aira/assets/obc_010.avif)
+![](./assets/obc_010.avif)
 
 Create the system binaries with these commands below: 
 
-'''bash
-
+```bash
 sudo ./tools/l4t_flash_prerequisites.sh 
 sudo ./apply_binaries.sh 
+```
 
-'''
+![](./assets/obc_011.avif)
 
-![](./Aira/assets/obc_011.avif)
+![](./assets/obc_012.avif)
 
-![](./Aira/assets/obc_012.avif)
-
-![](./Aira/assets/obc_013.avif)
+![](./assets/obc_013.avif)
 
 Apply the new BSP files and interface configurations with the following commands below: 
 
-'''bash
-
+```bash
 cd .. 
 sudo ./replace_bsp_files.sh
 cd Linux_for_Tegra/ 
+```
 
-'''
-
-![](./Aira/assets/obc_014.avif)
+![](./assets/obc_014.avif)
 
 Hint: If you want to configure your username-password & hostname with default settings, you can create user without the Ubuntu installation wizard. To do this, the user generation command structure should be: 
 
-'''bash
-
+```bash
 sudo tools/l4t_create_default_user.sh -u {USERNAME} -p {PASSWORD} -a -n {HOSTNAME} --accept-license 
-
-'''
+```
 For example (username:"nvidia", password:"nvidia", device-name:"nvidia-desktop"): 
-'''bash
 
+```bash
 sudo tools/l4t_create_default_user.sh -u nvidia -p nvidia -a -n nvidia-desktop --accept-license 
-
-'''
+```
 2. After the above steps, you would have an OS image ready with your preferred Jetpack version, now the below steps can be followed to install the OS onto the ORIN NX 
 
 ### Jetson OS Installation 
@@ -163,49 +156,44 @@ Attention: To be able to get more stable USB connection, please do not connect t
 
  
 
-Then, type “lsusb” and check the device connected in Recovery mode. 
+Then, type `lsusb` and check the device connected in Recovery mode. 
 
 • "0955:7323 NVidia Corp." for Orin NX 16GB 
 
-![](./Aira/assets/obc_015.avif)
+![](./assets/obc_015.avif)
 
 Flash the Jetson OS with this command below: 
 
-'''bash
+```bash
 sudo ./tools/kernel_flash/l4t_initrd_flash.sh --external-device nvme0n1p1 -c tools/kernel_flash/flash_l4t_external.xml -p "-c bootloader/generic/cfg/flash_t234_qspi.xml" --showlogs --network usb0 jetson-orin-nano-devkit interna
-
-'''
+```
 
 If you want to flash with Super Configuration (since JetPack-6.2), you can flash it with: 
 
-'''bash
-
+```bash
 sudo ./tools/kernel_flash/l4t_initrd_flash.sh --external-device nvme0n1p1 -c tools/kernel_flash/flash_l4t_external.xml -p "-c bootloader/generic/cfg/flash_t234_qspi.xml" --showlogs --network usb0 jetson-orin-nano-devkit-super internal 
+```
 
-'''
-
-![](./Aira/assets/obc_016.avif)
+![](./assets/obc_016.avif)
 
 At the end of the script, the device will reboot. Complete your Ubuntu installation wizard (if you have not created a user with tools/l4t_create_default_user.sh script file) from the DSBOARD-ORNXS (language, keyboard type, location, username & password etc.). 
 
-![](./Aira/assets/obc_017.avif)
+![](./assets/obc_017.avif)
 
 Below steps are performed on the OrinNX 
 
 [Optional] If you will use the recovery USB port as host (to be able to connect USB-2 & USB-3 devices), please verify that the FDT parameter has been applied in the extlinux.conf file. In JetPack-6 installation, this parameter may not included in it. If this parameter is missing in it, please open it with a text editor and write "FDT" with the DTB file (located in the /boot/dtb/ folder). 
 
-![](./Aira/assets/obc_018.avif)
+![](./assets/obc_018.avif)
 
 Then, please open a terminal from the Jetson Orin and type the following command below. This will update its current device-tree and reboot it.  
 Otherwise, you can use this port for virtual network communication (file transfer etc. between host PC with 192.168.55.1 IP address) in default. 
 
-'''bash
-
+```bash
 sudo switch_dtb.sh 
+```
 
-'''
-
-![](./Aira/assets/obc_019.avif)
+![](./assets/obc_019.avif)
 
 ## Jetson SDK Components Installation 
 
@@ -215,19 +203,19 @@ Connect the DSBOARD-ORNXS to the Ethernet. Then, open the NVIDIA SDK Manager. Se
 
 Then, continue to Step 2. 
 
-![](./Aira/assets/obc_020.avif)
+![](./assets/obc_020.avif)
 
 Choose at least “Jetson Runtime Components” (“Jetson SDK Components” are optional. It depends on your use case), accept the terms & conditions and continue to Step 3. 
 
-![](./Aira/assets/obc_021.avif)
+![](./assets/obc_021.avif)
 
 The SDK Manager will ask the username’s password. Fill it and continue. 
 
-![](./Aira/assets/obc_022.avif)
+![](./assets/obc_022.avif)
 
 Type the IP address, username and password of Jetson Orin module and install the SDK Components. 
 
-![](./Aira/assets/obc_023.avif)
+![](./assets/obc_023.avif)
 
 At the end of the installation, the DSBOARD-ORNXS becomes ready.  
 
@@ -238,13 +226,11 @@ Below steps will prevent the L4T packages’ upgrading on “apt upgrade” or �
 #### Holding the L4T Packages 
 Open a terminal and type this command below: 
 
-'''bash
-
+```bash
 sudo apt-mark hold 'nvidia-l4t-*' 
+```
 
-'''
-
-![](./Aira/assets/obc_024.avif)
+![](./assets/obc_024.avif)
 
 
 As you can see that, all “nvidia-l4t-*” packages set on hold. 
@@ -257,21 +243,17 @@ Upgrading All Packages Without L4T
 To check the updates on all packages, type this command on terminal:
 
 
-'''bash
-
+```bash
 sudo apt-get update
+```
 
-'''
-
-![](./Aira/assets/obc_025.avif)
+![](./assets/obc_025.avif)
 
 Then, you can try to upgrade them:
 
-'''bash
-
+```bash
 sudo apt-get upgrade
-
-'''
+```
 At the beginning of this command, you can see all hold packages will keep back.
 
-![](./Aira/assets/obc_026.avif)
+![](./assets/obc_026.avif)

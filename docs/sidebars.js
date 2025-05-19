@@ -215,6 +215,10 @@ module.exports = {
         'systems/SAFMC_IDP_2023/SAFMC_IDP_2023',
         'systems/SAFMC_IDP_2023/Simulation',
       ],
+      'Aira': [
+          'systems/Aira/aira_introduction',
+          'systems/Aira/onboard-computer_setup',
+      ],
   },
 
 };

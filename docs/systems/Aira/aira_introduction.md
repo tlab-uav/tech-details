@@ -1,6 +1,6 @@
 ---
 hide_title: true
-sidebar_label: Aira: System Bringup
+sidebar_label: Introduction
 ---
 
 
@@ -11,3 +11,4 @@ This documentation consists of the steps and procedures for the bringup of the A
 1. Mechanical Assembly and System Integration
 2. Flight Controller setup and configuration
 3. On-Board Computer setup and configuration -->
+
