@@ -9,11 +9,14 @@ sidebar_label: "On-Board Computer: Setup & Installation"
 
 ## On-Board Computer Details 
 
-SOM		: Orin NX 
+SOM		: Orin NX
+
 Carrier Board	: Forecr DSBOARD-ORNXS 
 
-:::note
-Use of both USB ports, USBHS1 is enabled by default but not the USBHS2, rather it is available on M.2 Key-E slot for Bluetooth, therefore to enable USBHS2 port, switch the slide switch to ON position. Refer DSBOARD-ORNXS Bluetooth Switch. 
+:::tip [To enable both USB Ports]
+USBHS1 is enabled by default but not the USBHS2, rather it is available on M.2 Key-E slot for Bluetooth, therefore to enable USBHS2 port, switch the slide switch to ON position. 
+
+Refer DSBOARD-ORNXS Bluetooth Switch. 
 :::
  
 
@@ -80,13 +83,13 @@ Orin NX: ~/nvidia/nvidia_sdk/JetPack_6.2_Linux_JETSON_ORIN_NX_TARGETS/
 
 For JetPack-6.0: 
 
-Download the BSP files from GitHub link and extract it (Orin NX). 
+Download the BSP files from GitHub link and extract it ([Orin NX](https://github.com/forecr/dsboard_ornxs_orin_bsp/raw/master/dsboard_ornxs_orin_nx_JP6_0_bsp.tar.xz)). 
 
 For JetPack-6.1: 
-Download the BSP files from GitHub link and extract it (Orin NX). 
+Download the BSP files from GitHub link and extract it ([Orin NX](https://github.com/forecr/dsboard_ornxs_orin_bsp/raw/refs/heads/master/dsboard_ornxs_orin_nx_JP6_1_bsp.tar.xz)). 
 
 For JetPack-6.2: 
-Download the BSP files from GitHub link and extract it (Orin NX). 
+Download the BSP files from GitHub link and extract it ([Orin NX](https://github.com/forecr/dsboard_ornxs_orin_bsp/raw/refs/heads/master/dsboard_ornxs_orin_nx_JP6_2_bsp.tar.xz)). 
 
  
 
@@ -257,3 +260,9 @@ sudo apt-get upgrade
 At the beginning of this command, you can see all hold packages will keep back.
 
 ![](./assets/obc_026.avif)
+
+## Reference Links
+1.  [DSBOARD-ORNXS](https://www.forecr.io/products/dsboard-ornxs)
+2.  [DSBOARD-ORNXS Datesheet](https://hs.forecr.io/hubfs/DATASHEETS/DSBOARD-ORNXS.pdf)
+3.  [DSBOARD-ORNXS User Manual](https://8770915.fs1.hubspotusercontent-na1.net/hubfs/8770915/User%20Manuels/DSBOARD_ORNXS_USER_MANUAL_REV_1.21.pdf)
+4.  [DSBOARD-ORNXS Connector Defintions](https://www.forecr.io/blogs/connectivity/dsboard-ornxs-overview-and-connector-definitions)
