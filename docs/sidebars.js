@@ -219,6 +219,7 @@ module.exports = {
           'systems/Aira/aira_introduction',
           'systems/Aira/onboard-computer_setup',
           'systems/Aira/vision_module_setup',
+          'systems/Aira/uxrceddsagent_setup',
       ],
   },
 

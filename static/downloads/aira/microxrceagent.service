@@ -1,0 +1,11 @@
+[Unit]
+Description= MicroXRCEAgent serial interface to flight controller
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/MicroXRCEAgent serial -D /dev/ttyTHS1 -b 921600
+Restart=on-failure
+User=root
+
+[Install]
+WantedBy=multi-user.target
