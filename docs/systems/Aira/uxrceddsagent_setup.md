@@ -59,10 +59,10 @@ User=root
 WantedBy=multi-user.target
 ```
 <!-- Download the above file from [microxrceagent.service](/downloads/microxrceagent.service) -->
+<!-- 
+Download the above file from <a href="/downloads/microxrceagent.service" download="microxrceagent.service">`microxrceagent.service`</a>
 
-Download the above file from <a href="/tech-details/downloads/aira/microxrceagent.service" download="microxrceagent.service">`microxrceagent.service`</a>
-
-<a href="/te>
+<a href="./downloads/microxrceagent.service">uxrce.service</a> -->
 
 
 Reload the daemon and enable the microxrceagent.service
