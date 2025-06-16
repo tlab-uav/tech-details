@@ -27,3 +27,17 @@
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+.invisible-table table,
+.invisible-table th,
+.invisible-table td {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.invisible-table table {
+  border-collapse: collapse;
+}
+.invisible-table thead{
+  display: none;
+}
