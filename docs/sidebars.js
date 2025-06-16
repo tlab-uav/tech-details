@@ -220,6 +220,9 @@ module.exports = {
           'systems/Aira/onboard-computer_setup',
           'systems/Aira/vision_module_setup',
           'systems/Aira/uxrceddsagent_setup',
+          'systems/Aira/viumesh_setup',
+          'systems/Aira/ros2_installation',
+          'systems/Aira/vio_setup',
       ],
   },
 

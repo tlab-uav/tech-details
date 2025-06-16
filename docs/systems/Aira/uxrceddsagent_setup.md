@@ -2,7 +2,7 @@
 hide_title: true
 sidebar_label: "MicroXRCE DDS Agent: Setup & Installation"
 ---
-# MicroXRCE DDS Agent: Installation & Setup
+# MicroXRCE DDS Agent: Setup & Installation
 
 ## Installation of uxrcedds agent
 Git clone thee MicroXRCE DDS Agent git repository
