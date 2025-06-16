@@ -65,7 +65,9 @@ Download the above file from <a href="/downloads/microxrceagent.service" downloa
 <a href="./downloads/microxrceagent.service">uxrce.service</a> -->
 
 
-<a href="/downloads/aira/microxrceagent.service" download>Download file.txt</a>
+<!-- <a href="/downloads/aira/microxrceagent.service" download>Download file.txt</a> -->
+
+<a href="/tech-details/downloads/aira/microxrceagent.service" download>Download file</a>
 
 
 Reload the daemon and enable the microxrceagent.service
