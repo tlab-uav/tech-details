@@ -48,7 +48,7 @@ Download the Precision Time Protocol(PTP) package on the OBC
 sudo apt install linuxptp
 ```
 
-Download the ptp4_software_master.conf file under `~/Downloads/vilota/`
+<!-- Download the ptp4_software_master.conf file under `~/Downloads/vilota/`
 
 Run the following on the host computer (e.g., Jetson Orin) for starting time synchronizer and verify its working
 
@@ -57,7 +57,18 @@ sudo ptp4l –2 –i <dev> -S –m –step_threshold=1 –f ~/Downloads/vilota/p
 
 #<dev> = Network interface name, if you have configured the network as provided above, then <dev> should be replaced with enP1p1s0
 
-sudo ptp4l –2 –i enP1p1s0 -S –m –step_threshold=1 –f ~/Downloads/vilota/ptp4l_software_master.conf
+sudo ptp4l –2 –i enP1p1s0 -S –m –step_threshold=1 –f ~/Downloads/vilota/ptp4l_software_master.conf -->
+
+Download the ptp4_software_master.conf file
+
+Run the following on the host computer (e.g., Jetson Orin) for starting time synchronizer and verify its working
+
+```bash
+sudo ptp4l –2 –i <dev> -S –m –step_threshold=1 –f ~/path/to/ptp4l_software_master.conf
+
+#<dev> = Network interface name, if you have configured the network as provided above, then <dev> should be replaced with enP1p1s0
+
+sudo ptp4l –2 –i enP1p1s0 -S –m –step_threshold=1 –f ~/path/to/ptp4l_software_master.conf
 ```
 ## Creating Service for Time Sync
 
