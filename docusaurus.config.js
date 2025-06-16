@@ -12,7 +12,7 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'tlab-uav', // Usually your GitHub org/user name.
-  trailingSlash: true,
+  trailingSlash: false,
   projectName: 'tech-details', // Usually your repo name.
   plugins: [require.resolve('docusaurus-lunr-search')],
   // for rendering latex
