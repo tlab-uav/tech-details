@@ -58,17 +58,12 @@ User=root
 [Install]
 WantedBy=multi-user.target
 ```
-<!-- Download the above file from [microxrceagent.service](/downloads/microxrceagent.service) -->
-<!-- 
-Download the above file from <a href="/downloads/microxrceagent.service" download="microxrceagent.service">`microxrceagent.service`</a>
 
-<a href="./downloads/microxrceagent.service">uxrce.service</a> -->
+You could also download the [microxrceagent service](https://tlab-uav.github.io/tech-details/downloads/aira/microxrceagent.service) file and move it to `/etc/systemd/system/`
 
-
-<!-- <a href="/downloads/aira/microxrceagent.service" download>Download file.txt</a> -->
-
-<a href="/tech-details/downloads/aira/microxrceagent.service" download>Download file</a>
-
+```bash
+sudo mv /path/to/microxrceagent.service /etc/systemd/system/
+```
 
 Reload the daemon and enable the microxrceagent.service
 

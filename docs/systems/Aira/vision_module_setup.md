@@ -93,6 +93,12 @@ User=root
 [Install]
 WantedBy=multi-user.target
 ```
+You could also download the [vision_timesysn.service](https://tlab-uav.github.io/tech-details/downloads/aira/vision_timesync.service) file and move it to `/etc/systemd/system/`
+
+```bash
+sudo mv /path/to/vision_timesync.service /etc/systemd/system/
+```
+
 Reload the daemon and enable the vision_timesync.service 
 
 ```bash
