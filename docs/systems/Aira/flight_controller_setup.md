@@ -55,13 +55,15 @@ Select Tools->Load from file and select the downloaded parameter file
 Review the parameter changes and click OK
 
 :::warning
-make sure there are no system specific parameters like callibration, rc values, etc,. are changed
+make sure there are no system specific parameters like calibration, rc values, etc,. are changed
 :::
 
-You have the change the following parameters manually,
+You have to change the following parameters manually,
 
 ```
 MAV_SYS_ID #It should be the integer number based on the drone ID, say if the drone ID is 0101_SDP_003, then the MAV_SYS_ID = 3
 ```
+
+After parameter configuration, calibrate the drone if needed
 
  

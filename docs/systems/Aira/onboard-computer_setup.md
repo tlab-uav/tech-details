@@ -67,7 +67,6 @@ Open the target HW image folder.
  
 
 For JetPack-6.0 
-
 Orin NX: ~/nvidia/nvidia_sdk/JetPack_6.0_Linux_JETSON_ORIN_NX_TARGETS/ 
 
  
@@ -82,7 +81,6 @@ Orin NX: ~/nvidia/nvidia_sdk/JetPack_6.2_Linux_JETSON_ORIN_NX_TARGETS/
 ![](./assets/obc_007.avif)
 
 For JetPack-6.0: 
-
 Download the BSP files from GitHub link and extract it ([Orin NX](https://github.com/forecr/dsboard_ornxs_orin_bsp/raw/master/dsboard_ornxs_orin_nx_JP6_0_bsp.tar.xz)). 
 
 For JetPack-6.1: 
