@@ -217,6 +217,7 @@ module.exports = {
       ],
       'Aira': [
           'systems/Aira/aira_introduction',
+          'systems/Aira/flight_controller_setup',
           'systems/Aira/onboard-computer_setup',
           'systems/Aira/vision_module_setup',
           'systems/Aira/uxrceddsagent_setup',

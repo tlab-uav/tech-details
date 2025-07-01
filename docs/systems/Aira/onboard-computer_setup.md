@@ -185,6 +185,11 @@ Below steps are performed on the OrinNX
 
 [Optional] If you will use the recovery USB port as host (to be able to connect USB-2 & USB-3 devices), please verify that the FDT parameter has been applied in the extlinux.conf file. In JetPack-6 installation, this parameter may not included in it. If this parameter is missing in it, please open it with a text editor and write "FDT" with the DTB file (located in the /boot/dtb/ folder). 
 
+```bash
+#Add the below line to use the recovery USB port as host
+FDT /boot/dtb/kernel_tegra234-p3768-0000+p3767-0000-nv.dtb
+```
+
 ![](./assets/obc_018.avif)
 
 Then, please open a terminal from the Jetson Orin and type the following command below. This will update its current device-tree and reboot it.  

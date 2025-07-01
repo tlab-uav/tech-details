@@ -23,9 +23,9 @@ sudo nmcli connection delete <connection-name>
 
 Setup network connection for the vision modules:
 ```bash
-sudo nmcli connection add type ethernet ifname enP1p1s0 con-name visionmoudle
+sudo nmcli connection add type ethernet ifname enP1p1s0 con-name visionmodule
 sudo nmcli connection modify visionmodule ipv4.method shared ipv4.routes 239.0.0.0/24 ipv4.route-metric 1
-sudo nmcli connection up visionmoudle
+sudo nmcli connection up visionmodule
 
 
 sudo systemctl restart NetworkManager
@@ -59,16 +59,16 @@ sudo ptp4l –2 –i <dev> -S –m –step_threshold=1 –f ~/Downloads/vilota/p
 
 sudo ptp4l –2 –i enP1p1s0 -S –m –step_threshold=1 –f ~/Downloads/vilota/ptp4l_software_master.conf -->
 
-Download the ptp4_software_master.conf file
+Download the [ptp4_software_master.conf](https://tlab-uav.github.io/tech-details/downloads/aira/ptp4l_software_master.conf) file
 
 Run the following on the host computer (e.g., Jetson Orin) for starting time synchronizer and verify its working
 
 ```bash
-sudo ptp4l –2 –i <dev> -S –m –step_threshold=1 –f ~/path/to/ptp4l_software_master.conf
+sudo ptp4l -2 -i <dev> -S -m --step_threshold=1 -f ~/path/to/ptp4l_software_master.conf
 
 #<dev> = Network interface name, if you have configured the network as provided above, then <dev> should be replaced with enP1p1s0
 
-sudo ptp4l –2 –i enP1p1s0 -S –m –step_threshold=1 –f ~/path/to/ptp4l_software_master.conf
+sudo ptp4l -2 -i enP1p1s0 -S -m --step_threshold=1 -f ~/path/to/ptp4l_software_master.conf
 ```
 ## Creating Service for Time Sync
 
