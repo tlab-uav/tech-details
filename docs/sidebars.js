@@ -175,6 +175,12 @@ module.exports = {
       'MSCKF_VIO Loop Closure': [
         'research/msckf_vio/loop_closure',
         ],
+      'Depth_Anything': [
+        'research/depth_anything/Depth_Anything',
+        'research/depth_anything/Building_with_Docker',
+        'research/depth_anything/Running_ROS_node',
+        'research/depth_anything/custom_workflow',
+      ],
 
   },
 

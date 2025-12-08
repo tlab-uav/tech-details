@@ -217,6 +217,11 @@ module.exports = {
                   label: 'EDT',
                   to: 'docs/research/edt/edt-overview'
                 },
+                {
+                  activeBasePath:'docs/research/depth_anything',
+                  label: 'Depth Anything',
+                  to: 'docs/research/depth_anything/Depth_Anything'
+                },
               ]
             },
 
