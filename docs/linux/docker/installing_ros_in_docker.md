@@ -18,6 +18,35 @@ docker run -it --name ros_container --net=host --privileged osrf/ros:noetic-desk
 ## Install Gestelt in Container
 After we have installed both docker as well as ROS Noetic within the docker, we can now proceed to follow the instructions in [Gestelt]https://github.com/Temasek-Dynamics/gestelt
 
+## Pushing to Docker to share container
+So you can actually build your container and share it. There are 2 ways of doing it. One, you build your docker container and send the whole container. The other, you state your configuration, share it on github and others can clone your configuration and build it themselves.
+
+### Pushing to Docker for file sharing
+
+First you have to login to docker by doing 
+``` bash
+docker login
+```
+
+Sometimes, you will have issues logging in with your credentials. In that case you can do the following:
+
+```bash
+sudo nano /etc/docker/daemon.json
+```
+copy the following into the json file
+```bash
+{
+  "dns": ["8.8.8.8", "8.8.4.4"]
+}
+```
+
+```bash
+sudo systemctl restart docker
+```
+
+The above should work
+
+
 ## Important commands in Docker
 
 ### To start a new container with ROS
