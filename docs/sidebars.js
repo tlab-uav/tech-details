@@ -115,6 +115,9 @@ module.exports = {
           'linux/kernel/grub-default-kernel',
           'linux/kernel/nvidia-intel-driver',
           'linux/kernel/usb'
+      ],
+    'Docker & ROS': [
+      'linux/docker/installing_ros_in_docker'
       ]
   },
 
