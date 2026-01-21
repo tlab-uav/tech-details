@@ -156,6 +156,11 @@ module.exports = {
                   label: 'Drivers & Kernel',
                   to: 'docs/linux/kernel/grub-default-kernel'
                 },
+                {
+                  activeBasePath:'docs/linux/docker',
+                  label: 'ROS & Docker',
+                  to: 'docs/linux/docker/installing_ros_in_docker'
+                },
               ]
             },
 
