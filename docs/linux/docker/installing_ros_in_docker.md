@@ -18,4 +18,26 @@ docker run -it --name ros_container --net=host --privileged osrf/ros:noetic-desk
 ## Install Gestelt in Container
 After we have installed both docker as well as ROS Noetic within the docker, we can now proceed to follow the instructions in [Gestelt]https://github.com/Temasek-Dynamics/gestelt
 
+## Important commands in Docker
+
+### To start a new container with ROS
+``` bash
+docker run -it --name ros_container --net=host --privileged osrf/ros:noetic-desktop-full bash
+```
+
+### To start re-enter the ros_container
+``` bash
+docker start -ai ros_container2
+```
+
+### To delete a container
+```bash
+docker rm ros_container2
+```
+
+### To attach to a running container
+```bash
+docker exec -it ros_container2 bash
+```
+
 
