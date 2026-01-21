@@ -1,42 +1,14 @@
 ---
 hide_title: true
-sidebar_label: Nvidia Intel Graphics
+sidebar_label: ROS Noetic & DOcker
 ---
-# Nvidia Intel Graphics Driver
-### Option 1
-1. go to [Nvidia]( https://www.nvidia.com/object/unix.html ) to download the latest driver in .run format
-2. go to `single-user mode` and uninstall existing nvidia drivers `sudo apt-get purge nvidia-*`
-You may need to perform `apt autoremove` to remove stray nvidia related packages. 
 
-```
-$ init 1
-$ sudo apt-get purge nvidia-*
-```
-3. Verify That Nouveau Driver is Disabled: remove nvidia related config files under `/etc/modprobe.d/` and `/lib/modprobe.d/` 
-4. excute the downloaded run file
-```
-$ ./NVIDIA-Linux-x86_64-440.44.run
-```
-5. update the following lines in grub file
-   
-`$ nano /etc/default/grub`
-
-```
-GRUB_CMDLINE_LINUX_DEFAULT="modprobe.blacklist=nouveau"
-GRUB_CMDLINE_LINUX=""
-```
-
-`$ sudo update-grub`
-
-6. verify the running kernel module`$ prime-select query `. Switch to nvidia if the current version is intel: `$ prime-select nvidia `
-
-7. Verify That Nouveau Driver is Disabled
 # This page serves to document information relating to installing ROS1 noetic on Docker containers
-We follow the following webpage: https://discourse.openrobotics.org/t/running-ros-noetic-in-docker-a-practical-guide-for-simulation-and-teleoperation/42572
-
+More specifically, we want to install gestelt [Link Text]https://github.com/Temasek-Dynamics/gestelt into Docker
+We follow the following webpage: [Link Text]https://discourse.openrobotics.org/t/running-ros-noetic-in-docker-a-practical-guide-for-simulation-and-teleoperation/42572
 
 ``` bash
-grep nouveau /var/log/Xorg.0.log
+docker run -it --name ros_container --net=host --privileged osrf/ros:noetic-desktop-full bash
 ```
 
 ### Option 2
