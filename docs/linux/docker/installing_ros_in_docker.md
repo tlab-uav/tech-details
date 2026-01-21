@@ -44,8 +44,30 @@ copy the following into the json file
 sudo systemctl restart docker
 ```
 
-The above should work
+The above should work.
 
+Once you are able to login, commit the file with the repo and tag. 
+
+```bash
+docker commit ros_container2 gestelt_ros1:latest
+
+docker tag gestelt_ros1:latest yourusername/gestelt_ros1:latest
+```
+where ros_container2 is the name of your container and yourusername is the name of the docker login id. gestelt_ros1 is the name of the repo and latest is the tag name.
+
+After which, you can push this to your docker account
+
+```bash
+docker push yourusername/gestelt_ros1:latest
+```
+
+### Pulling containers from Docker for file sharing
+
+To pull containers from docker, simply run the following code
+
+```bash
+docker pull yourusername/gestelt_ros1:latest
+```
 
 ## Important commands in Docker
 
