@@ -10,7 +10,14 @@ sidebar_label: "Vision Module: Setup & Installation"
 
 Front Vision Sensor : VK180Pro
 
+Download the [extrinsic files for VK180Pro](https://tlab-uav.github.io/tech-details/downloads/aira/VK180Pro_Extrinsics)
+
 Rear Vision Sensor  : VK180
+
+Download the [extrinsic files for VK180](https://tlab-uav.github.io/tech-details/downloads/aira/VK180_Extrinsics)
+
+![](./assets/vilota_frame_coordinates.png)
+
 
 ## Network Configuration for Vision Sensors
 
@@ -172,7 +179,7 @@ For VK180 (Slave),
 
 Time Synchronizer 
 
-    Start-on-boo    : Yes 
+    Start-on-boot    : Yes 
     Role            : SlaveSoftware 
 
 Camera Driver 0 
