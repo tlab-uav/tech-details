@@ -67,6 +67,7 @@ module.exports = {
         'hardware/px4-firmware/px4-camera-trigger',
         'hardware/px4-firmware/px4-dynamic-control-allocation',
         'hardware/px4-firmware/px4-FAQ'
+        'hardware/px4-firmware/uORB'
         
       ],
       'ECL EKF':[
