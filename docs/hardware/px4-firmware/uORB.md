@@ -44,5 +44,5 @@ This basically receives the mavlink message (interfaced by mavros) and then proc
 
 
 ## Testing the receiving of the message
-After that, you can launch the PX4. Then you can send a message to through the debug topic `mavros/debug_value/send`. Then under the PX4 terminal, you can type `listener test_position_setpoint` and you will then see your message appear. Rmb test_position_setpoint is the name of your message.
+After that, you can launch the PX4. Then you can send a message to through the debug topic `mavros/debug_value/send`. Then under the PX4 terminal, you can type `listener test_position_setpoint` and you will then see your message appear. Rmb test_position_setpoint is the name of your message. Done
 
