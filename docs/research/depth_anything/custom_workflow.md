@@ -124,3 +124,20 @@ The above launch requires the input_image to be from usb_cam rospackage. In orde
 rosrun usb_cam usb_cam_node _pixel_format:=yuyv _video_device:=/dev/video0
 ```
 
+To perform camera calibration, we first need a checkered board. It can be downloaded from https://markhedleyjones.com/media/projects/calibration-checkerboard-collection/Checkerboard-A4-25mm-8x6.pdf
+
+This is a 25mm 9 x 7 checkered board orient in landscape. It has 8 x 6 joints.
+
+In order to perform calibration, we use the following package `camera_calibration`
+
+The size = number of joints and --sqaure refers to the dimension of the square in m. You should run the /usb_cam in order to extract the images as ros topic and also where you intend to save the camera_info. In our case, we save the camera info under /usb_cam. By default, when you run /usb_cam, it extracts a default camera info from a file like this `/home/tlabstaff/.ros/camera_info/head_camera.yaml`. When you input `/usb_cam` in `camera:=/usb_cam`, it will override the yaml file after you press the button commit.
+
+```
+rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.025 image:=/usb_cam/image_raw camera:=/usb_cam
+```
+After running this, you will see a GUI. You can start calibrating, moving the camera nearer or further, translate and rotate the camera with respect to the checkered board. After sufficiently gathering data points, you can click on calibrate, save and finally commit.
+
+
+To simply extract the images without ros, you can run the following:
+`ffplay /dev/video0`
+
