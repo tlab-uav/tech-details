@@ -91,4 +91,20 @@ docker rm ros_container2
 docker exec -it ros_container2 bash
 ```
 
+### To enable GPU rendering.
+```bash
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+```
+Before that, ensure you have nvidia-container-toolkit.
+```bash
+sudo apt install -y nvidia-container-toolkit
+```
+
+### To enable port forwarding to forward display.
+```bash
+xhost +local:docker
+```
+before starting your container
+
 
