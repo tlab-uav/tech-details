@@ -115,6 +115,10 @@ module.exports = {
                   to: 'docs/systems/SAFMC'
                 },
                 {
+                  label: 'Charpi Drone Setup',
+                  to: 'docs/systems/Charpi-Drone'
+                },
+                {
                   label: 'Crazyflie',
                   to: 'docs/systems/Crazyflie'
                 },
